@@ -136,3 +136,21 @@ resource "aws_wafv2_web_acl_logging_configuration" "waf_logging" {
     }
   }
 }
+
+# Output the WAF Web ACL ARN for manual association
+output "web_acl_arn" {
+  description = "The ARN of the WAF Web ACL to be associated with AppSync API"
+  value       = aws_wafv2_web_acl.appsync_waf.arn
+}
+
+# Output the WAF Web ACL ID for reference
+output "web_acl_id" {
+  description = "The ID of the WAF Web ACL"
+  value       = aws_wafv2_web_acl.appsync_waf.id
+}
+
+# Output the WAF Web ACL Name for reference
+output "web_acl_name" {
+  description = "The Name of the WAF Web ACL"
+  value       = aws_wafv2_web_acl.appsync_waf.name
+}
